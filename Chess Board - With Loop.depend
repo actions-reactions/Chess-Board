@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1519323210 source:u:\smjpx\documents\codeblocks\chess board - with loop\main.c
+	<GL/gl.h>
+	<GL/glut.h>
+	<stdio.h>
+
