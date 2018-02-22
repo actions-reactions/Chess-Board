@@ -1,9 +1,0 @@
-# depslib dependency file v1.0
-1519027786 source:u:\smjpx\documents\codeblocks\chess board - bnw\main.c
-	<GL/gl.h>
-	<GL/glut.h>
-
-1519028294 source:u:\smjpx\documents\github\chess-board\main.c
-	<GL/gl.h>
-	<GL/glut.h>
-
