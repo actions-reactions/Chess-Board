@@ -1,6 +1,5 @@
 #include <GL/gl.h>
 #include <GL/glut.h>
-
 // #include <GLUT/GLUT.h>
 #include <stdio.h>
 
@@ -101,7 +100,7 @@ void init(void) {
 int main(int argc, char** argv) {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-    glutInitWindowSize(600, 600);
+    glutInitWindowSize(800, 800);
     glutInitWindowPosition(-400, -400);
     glutCreateWindow("Chess Board");
     init();
