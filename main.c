@@ -13,11 +13,13 @@
 //#include <GL/gl.h>
 //#include <GL/glut.h>
 
+#include <stdio.h>
+
 void display(void);
 void init(void);
-void boardBlock(int, int, int);
+void boardBlock(int, int, int, int);
 
-void boardBlock(int x, int y, int c){
+void boardBlock(int x, int y, int c, int bn){
     ( c == 1 ) ? glColor3ub(255, 255, 255) : glColor3ub(0, 0, 0);
     glBegin(GL_POLYGON);
     glVertex2d(x, y);
@@ -25,22 +27,36 @@ void boardBlock(int x, int y, int c){
     glVertex2d(x + 150, y - 150);
     glVertex2d(x, y - 150);
     glEnd();
+    
+    int ax = x + 150;
+    int ay = y - 150;
+    
+    printf("// Block #%d\n\n", bn);
+    ( c == 1 ) ? printf("glColor3ub(255, 255, 255);\n") : printf("glColor3ub(0, 0, 0);\n");
+    printf("glBegin(GL_POLYGON);\n");
+    printf("glVertex2d(%d, %d);\n", x, y);
+    printf("glVertex2d(%d, %d);\n", ax, y);
+    printf("glVertex2d(%d, %d);\n", ax, ay);
+    printf("glVertex2d(%d, %d);\n", x, ay);
+    printf("glEnd();\n\n");
 }
 
 void display(void) {
     /* clear all pixels */
     glClear (GL_COLOR_BUFFER_BIT);
-    int x = 0, y = 1200, c = 1;
+    int x = 0, y = 1200, c = 1, bn = 1;
     for(int i = 1; i <= 8; i++) {
         for(int j = 1; j <= 8; j++) {
-            boardBlock(x, y, c);
+            boardBlock(x, y, c, bn);
             x += 150;
             ( c == 1 ) ? c = 0 : c = 1;
+            bn++;
         }
         x = 0;
         ( c == 1 ) ? c = 0 : c = 1;
         y = y - 150;
     }
+    
     glFlush ();
 }
 void init (void) {
