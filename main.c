@@ -41,10 +41,6 @@ void display(void) {
         ( c == 1 ) ? c = 0 : c = 1;
         y = y - 150;
     }
-
-    
-    
-    
     glFlush ();
 }
 void init (void) {
